@@ -7,30 +7,103 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="style/index.css">
 
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <title>Course App-landing: SprigTech</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script type="text/x-handlebars-template" id='svg-template'>
+            <defs>
+                <filter id="shadow">
+                    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="gray"  />
+                </filter>
+
+                <linearGradient id="blue-gradient-frame">
+                    <stop offset="0%" stop-color="#f2fefe" />
+                    <stop offset="32%" stop-color="#34e3f2" />
+                    <stop offset="48%" stop-color="#33fee7" />
+                    <stop offset="80%" stop-color="#33cafb" />
+                    <stop offset="90%" stop-color="white" />
+                    <stop offset="100%" stop-color="white" />
+                </linearGradient>
+
+                <radialGradient id="blue-gradient-point">
+                    <stop offset="0%" stop-color="#8bebebe7" />
+                    <stop offset="32%" stop-color="#34e3f2" />
+                    
+                    <stop offset="80%" stop-color="#34fce4" />
+                    <stop offset="100%" stop-color="#20dfa6a1" />
+                </radialGradient>
+            </defs>
+            <g>
+                <polyline points="100 30, 100 70, 75 100, 25 100, 0 70, 0 30" stroke="rgba(255,255,255,0.5)"
+                    fill="white" 
+                    stroke-width="1"
+                    filter="url(#shadow)" />
+                
+                <polyline points="0 30, 25 0, 75 0, 100 30"
+                        fill="white" 
+                        stroke="url(#blue-gradient-frame)" />
+            </g>
+
+            <g>
+                <circle cx="20" cy="35" r="2.5"
+                    fill="url(#blue-gradient-point)" />
+
+                <text x="26" y="36"
+                    font-size="5.5"
+                    font-weight="bold">
+                        {{title}}</text>
+
+                <rect x="24" y="37.5" width="32" height="1"
+                    stroke="transparent"
+                    fill="url(#blue-gradient-frame)" />
+
+                <text x="26" y="50"
+                    font-size="4.5"
+                    font-weight="bold" fill="#959E9E" >
+                        {{text1}}</text>
+
+                <text x="26" y="56"
+                font-size="4.5"
+                font-weight="bold" fill="#959E9E" >
+                    {{text2}}</text>
+
+                <text x="26" y="62"
+                font-size="4.5"
+                font-weight="bold" fill="#959E9E" >
+                    {{text3}}</text>
+
+                <text x="26" y="68"
+                font-size="4.5"
+                font-weight="bold" fill="#959E9E" >
+                    {{text4}}</text>
+            </g>
+        </script>
+
     </head>
 
     <body>
         <!--Home section-->
         <div id="home">
             <!--Banner-->
-                <div id="banner" class="d-flex bg-white justify-content-center py-md-4 px-md-5 text-dark"> <!--mobile-->
+                <div id="banner" class="d-flex bg-white justify-content-center px-md-5 text-dark"> <!--mobile-->
                     
-                    <div class="d-md-flex ">
+                    <div class="w-100">
                         <!--Company brand-->
-                        <div class="">
-                            <h1 class="">SpringTech</h1>
+                        <div class="d-flex justify-content-between justify-content-md-center align-items-center align-items-md-end p-3">
                             <!--icon-->
+                            <h3 class="mx-md-5 px-md-5 h3 font-weight-bold">SpringTech</h3>
+                            
 
                             <!--nav bar CAROUSEL (mobile view)-->
-                            <div class="d-block d-md-none pt-1">
+                            <div class="d-block d-md-none pt-1 p-0">
                                            
                                 <div class="pos-f-t">
-                                    <nav class="navbar navbar-dark">
+                                    <nav class="navbar p-0 m-0">
                                         <button class="navbar-toggler m-auto" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarToggleExternalContent" aria-expanded="false">
-                                            <span class="navbar-toggler-icon"></span>
+                                        <span class="text-dark h3 p-0"><i class="fa fa-ellipsis-h p-0"></i></span>    
                                             <!--icon to change-->
                                         </button>
                                     </nav>
@@ -51,12 +124,12 @@
                             <!--end nav bar CAROUSEL (mobile view)-->
 
                             <!--Nav-->
-                            <div class="pt-2 div-nav d-none d-md-block">
+                            <div class="div-nav d-none d-md-block">
                                 <nav class="d-flex justify-content-center flex-wrap py-2">
-                                    <a href="#programs" class="mx-lg-5 mx-3 my-2 text-reset">Programs</a>
-                                    <a href="#courses" class="mx-lg-5 mx-3 my-2 text-reset">Courses</a>
-                                    <a href="#features" class="mx-lg-5 mx-3 my-2 text-reset">Features</a>
-                                    <a href="#contact" class="mx-lg-5 mx-3 my-2 text-reset">Contact</a>
+                                    <a href="#programs" class="mx-4 font-weight-bolder h4 my-2 text-reset">Programs</a>
+                                    <a href="#courses" class="mx-4 font-weight-bolder h4 my-2 text-reset">Courses</a>
+                                    <a href="#features" class="mx-4 font-weight-bolder h4 my-2 text-reset">Features</a>
+                                    <a href="#contact" class="mx-4 font-weight-bolder h4 my-2 text-reset">Contact</a>
                                 </nav>
                             </div>
                             <!--end Nav-->
@@ -67,33 +140,67 @@
             <!--end Banner-->
 
             <!--Home-Content section-->
-                <div id="home-content position-relative">    
+                <div id="home-content" class="w-100 position-relative">    
                     <!--Home Slogan image-phone-app-->
-                    <div class="d-flex justify-content-center">
-                        <!--Slogan-->
-                        <div class="text-center text-white">
-                            <h2>Get in sync with your skill</h2>
-                            <h4>SpringTech places your goal ahead with your skill</h4>
-                            <button class="single-gradient-blue btn btn-lg m-3">DONWLOAD</button>
-                        </div>
+                    <div class="d-flex justify-content-center align-items-center h-100 pb-md-5 mb-md-5">
+                       <div class="d-flex col-12 justify-content-md-center justify-content-start align-items-center h-100 pb-md-5 mb-md-5">
+                            <!--Slogan-->
+                            <div class="d-flex flex-column justify-content-md-center justify-content-start text-white mr-md-5 col-6 pr-md-5">
+                                <h2>Get in sync with your skill</h2>
+                                <p>SpringTech places your goal ahead with your skill</p>
+                                <button class="single-gradient-blue font-weight-bold text-white px-4 btn btn-lg m-md-3">DONWLOAD</button>
+                            </div>
 
-                        <!--Image-phone-app-->
-                        <div></div>
+                            <!--Image-phone-app-->
+                            <div class="h-75 col-md-2 d-flex align-items-center">
+                                <img src="style/images/phone-home.png" alt="phone-home" class="h-100 d-none d-sm-block">
+                                <img src="style/images/phone-home.png" alt="phone-home" class="h-50 d-sm-none">
+                            </div>
+                       </div>
                     </div>
                     <!--end Home Slogan image-phone-app-->
 
                     <!--App proceed-->
-                    <div class="position-absolute w-75">
-                        <h4 class="text-white text-center">How our app works</h4>
+                    
+                        
+                        <div id="app-proceed-group" class="col-12 position-absolute mx-auto p-0">
+                            <h4 class="text-white text-center">How our app works</h4>
 
-                        <!--Group of app proceed-->
-                            <div class="d-flex justify-content-center">
+                            <!--Group of app proceed-->
+                            <div class="d-flex justify-content-center w-100 h-100">
                                 <!--Single app proceed-->
-                                <div></div>
+                                <div class="col-4 position-relative app-proceed">
+                                    <div class="svg-container">
+                                        <svg viewBox="-10 -10 120 120" preserveAspectRatio="xMinYMin meet" version="1.1" class="svg-content">
+                                            
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!--end Single app proceed-->
+
+                                <!--Single app proceed-->
+                                <div class="col-4 position-relative app-proceed">
+                                    <div class="svg-container">
+                                        <svg viewBox="-10 -10 120 120" preserveAspectRatio="xMinYMin meet" version="1.1" class="svg-content">
+                                            
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!--end Single app proceed-->
+
+                                <!--Single app proceed-->
+                                <div class="col-4 position-relative app-proceed">
+                                    <div class="svg-container">
+                                        <svg viewBox="-10 -10 120 120" preserveAspectRatio="xMinYMin meet" version="1.1" class="svg-content">
+                                            
+                                        </svg>
+                                    </div>
+                                </div>
                                 <!--end Single app proceed-->
 
                             </div>
                         <!--end Group of app proceed-->
+                        </div>
                     </div>
                     <!--end App proceed-->
                     
@@ -104,8 +211,115 @@
 
 
         <!--Program section-->
-        <div id="programs">
+        <div id="programs" style="height: 400px;">
             
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <div class="d-flex position-relative mt-5">
+                    <h3 class="text-center">Our Programs Features</h3>
+                    <p class="col-3 border-gradient-blue position-absolute h-100"> </p>
+                </div>
+
+                <!--programs web view-->
+                <div class="px-5 pt-3 d-none d-md-block">
+                    <div class="d-flex w-100 justify-content-center px-5">
+                        <div class="d-flex flex-column m-3 p-3 border-program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-shield"></span> <br>
+                                <p>CYBER SECURITY</p>
+                            </div>
+                            <p>Fast Track your Career Today with Fun Challenges and Real Cyber Security Content</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column m-3 p-3 border-program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-snowflake-o"></span> <br>
+                                <p>PRODUCT DESIGN</p>
+                            </div>
+                            <p>Identify market opportunity, clearly defining, developing proper solution for that problem ..</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column m-3 p-3 border-program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-code"></span> <br>
+                                <p>PROGRAMMING</p>
+                            </div>
+                            <p>defining algorrithms and building solution to real life problem</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column m-3 p-3 border-program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-cogs"></span> <br>
+                                <p>MANAGEMENT</p>
+                            </div>
+                            <p>set strategies for an organization and coordinating to accomplish its objectives</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end programs web view-->
+
+                <!--programs mobile view-->
+                <div class="px-5 pt-3 d-md-none">
+                    <div class="d-flex flex-column w-100 justify-content-center">
+                        <div class="d-flex flex-column m-3 p-3 mobile_program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-shield"></span> <br>
+                                <p>CYBER SECURITY</p>
+                            </div>
+                            <p>Fast Track your Career Today with Fun Challenges and Real Cyber Security Content</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column m-3 p-3 mobile_program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-snowflake-o"></span> <br>
+                                <p>PRODUCT DESIGN</p>
+                            </div>
+                            <p>Identify market opportunity, clearly defining, developing proper solution for that problem ..</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-none flex-column m-3 p-3 mobile_program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-code"></span> <br>
+                                <p>PROGRAMMING</p>
+                            </div>
+                            <p>defining algorrithms and building solution to real life problem</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                        <div class="d-none flex-column m-3 p-3 mobile_program">
+                            <div class="h3">
+                                <span class="my-3 fa fa-cogs"></span> <br>
+                                <p>MANAGEMENT</p>
+                            </div>
+                            <p>set strategies for an organization and coordinating to accomplish its objectives</p>
+                            <div class="w-100 h2 text-right">
+                                <span class="fa fa-long-arrow-right single-gradient-blue-color"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end programs mobile view-->
+
+                <div class="d-md-none">
+                    <button class="btn btn-secondary-outline font-italic font-weight-bold rounded-pill" id="see-more-program_mobile">
+                        See more <span class="fa fa-chevron-right"></span></button>
+                </div>
+            </div>
+
+
             
         </div>
         <!--end Program section-->
@@ -142,6 +356,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-        
+        <script src="style/js/index.js"></script>
     </body>
 </html>

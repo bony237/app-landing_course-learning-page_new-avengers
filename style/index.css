@@ -1,9 +1,10 @@
 #home-content {
     background: url("images/bg-home-content.png") center no-repeat border-box;
-    background-size: contain;
+    background-size: cover;
     position: relative;
+    height: 700px;
     z-index: 0;
-    max-height: 724px;
+
 }
 
 #home-content::before {
@@ -15,4 +16,68 @@
     left: 0;
     z-index: -1;
     background-color: rgba(0, 0, 0, 0.562);
+}
+
+.border-debug1 {
+    border: yellow dashed 3px;
+}
+
+.border-debug2 {
+    border: #1eff00 solid 3px;
+}
+
+.border-debug3 {
+    border: tomato dotted 3px;
+}
+
+#app-proceed-group {
+    /*left: 12.5%;*/
+    bottom: -150px;
+
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.app-proceed:first-child {
+    left: 8.75%;
+    z-index: -1;
+}
+
+.app-proceed:last-child {
+    right: 8.75%;
+    z-index: -1;
+}
+
+.single-gradient-blue {
+    background: linear-gradient(45deg, #1abdf3 0%, #22ddee 32%,#2af1da 80%,#11f3bbee 100%);
+}
+
+.single-gradient-blue-color {
+    color: #1abdf3;
+}
+
+.border-gradient-blue {
+    border-bottom: 5px solid;
+    border-image: linear-gradient(45deg, #1abdf3, white) 20;
+}
+
+.border-program {
+    border: solid 1px;
+    border-top: none;
+    border-image: linear-gradient(45deg, #1abdf3, white) 20;
+    box-shadow: 0px 0px 1px #2af1da;
 }
