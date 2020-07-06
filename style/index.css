@@ -1,7 +1,7 @@
 
 @media (max-width: 576px) {
     html { font-size: 0.8em; }
-    
+
 }
 
 /*@media (min-width: 768px) {
@@ -21,9 +21,7 @@
     background: url("images/bg-home-content.png") center no-repeat border-box;
     background-size: cover;
     position: relative;
-    /*height: 700px;*/
     z-index: 0;
-
 }
 
 #home-content::before {
@@ -109,4 +107,8 @@
 
 .download-plateform {
     font-size: 0.76em;
+}
+
+#form-contact {
+    background: url("images/bg-form-contact.png") center no-repeat border-box;
 }
