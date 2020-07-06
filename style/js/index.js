@@ -1,3 +1,4 @@
+/* Svg Creation (DRY processus) */
 const source = document.querySelector('#svg-template').innerHTML;
 const svgTemplate = Handlebars.compile(source);
 
