@@ -32,21 +32,22 @@ for(let i=0; i<svgContentAll.length; i++) {
 }
 
 //get the size of the proceed DIV for positionning him
-(function() {
+/*(function() {
     const proceedDiv = document.querySelector('#app-proceed-group');
-    const hauteur = document.querySelector('.svg-container').offsetHeight * 0.615;
+    const hauteur = document.querySelector('.svg-content').height.baseVal.value * 0.15;
     
-    proceedDiv.style.bottom = `-${hauteur}px`;
-    document.querySelector('#programs').style.paddingTop = `${hauteur}px`;
+    proceedDiv.style.bottom = `${hauteur}px`;
+    //document.querySelector('#programs').style.paddingTop = `${hauteur}px`;
 })();
 
 window.addEventListener('resize', () => {
     const proceedDiv = document.querySelector('#app-proceed-group');
-    const hauteur = proceedDiv.offsetHeight * 0.615;
+    const hauteur = document.querySelector('.svg-content').height.baseVal.value * 0.15;
     
-    proceedDiv.style.bottom = `-${hauteur}px`;
-    document.querySelector('#programs').style.paddingTop = `${hauteur}px`;
-});
+    proceedDiv.style.bottom = `${hauteur}px`;
+    console.log(hauteur);
+    //document.querySelector('#programs').style.paddingTop = `${hauteur}px`;
+});*/
 
 // see-more-program
 

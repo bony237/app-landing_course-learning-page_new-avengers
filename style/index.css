@@ -1,8 +1,27 @@
+
+@media (max-width: 576px) {
+    html { font-size: 0.8em; }
+    
+}
+
+/*@media (min-width: 768px) {
+    html { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+    html { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+    html { font-size: 2rem; }
+}*/
+
+
 #home-content {
     background: url("images/bg-home-content.png") center no-repeat border-box;
     background-size: cover;
     position: relative;
-    height: 700px;
+    /*height: 700px;*/
     z-index: 0;
 
 }
@@ -31,9 +50,7 @@
 }
 
 #app-proceed-group {
-    /*left: 12.5%;*/
-    bottom: -150px;
-
+   height: 0;
 }
 
 .svg-container {
@@ -62,6 +79,10 @@
     z-index: -1;
 }
 
+#programs {
+    margin-top: 23%;
+}
+
 .single-gradient-blue {
     background: linear-gradient(45deg, #1abdf3 0%, #22ddee 32%,#2af1da 80%,#11f3bbee 100%);
 }
@@ -80,4 +101,12 @@
     border-top: none;
     border-image: linear-gradient(45deg, #1abdf3, white) 20;
     box-shadow: 0px 0px 1px #2af1da;
+}
+
+#courses {
+    background-color: black;
+}
+
+.download-plateform {
+    font-size: 0.76em;
 }
